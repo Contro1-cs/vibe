@@ -5,12 +5,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vibe/firebase/authentication_service.dart';
-import 'package:vibe/home.dart';
 import 'package:vibe/user%20onboarding/onboarding_screens.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -36,26 +35,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: AuthenticationSrapper(),
+        home: OnboardingScreens(),
       ),
     );
-  }
-}
-
-class AuthenticationSrapper extends StatelessWidget {
-  const AuthenticationSrapper({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User>();
-
-    if (firebaseUser == null) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
-      return Text('data');
-    }
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => OnboardingScreens()));
-    return Text('not signed in');
   }
 }
