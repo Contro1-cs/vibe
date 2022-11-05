@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vibe/home.dart';
 import 'package:vibe/questions/artist.dart';
 import 'package:vibe/questions/question_list.dart';
 import 'package:vibe/widgets/question_option.dart';
@@ -125,7 +124,11 @@ class SurveyState extends State<Survey> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _decrementCounter();
+                  if (questionsLength % questions_list.length != 0) {
+                    _decrementCounter();
+                  } else {
+                    Navigator.pop(context);
+                  }
                 },
                 child: Container(
                     margin: EdgeInsets.only(top: 60),
