@@ -21,18 +21,20 @@ class QuestionOptionState extends State<QuestionOption> {
       width: w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: Color(0xffD9D9D9).withOpacity(0.6),
+        color: Color(0xff8288C3),
         border: Border.all(color: Colors.black),
       ),
       child: Center(
-          child: Text(
-        widget.option,
-        style: GoogleFonts.poppins(
+        child: Text(
+          widget.option,
+          style: GoogleFonts.poppins(
             textStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 18,
-        )),
-      )),
+              color: Colors.white,
+              fontSize: 18,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

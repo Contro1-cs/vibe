@@ -40,11 +40,13 @@ class SurveyState extends State<Survey> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: SafeArea(
-        child: questionBody(),
+      backgroundColor: Color(0xff2E2539),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: questionBody(),
+        ),
       ),
-    ));
+    );
   }
 
   Widget questionBody() {
@@ -66,18 +68,20 @@ class SurveyState extends State<Survey> {
           Text(
             'Question ${(questionsLength % questions_list.length + 1).toString()}:',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w600)),
+              textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
           Text(
             '${questions_list.length - questionsLength % questions_list.length} questions left',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-              color: Colors.grey,
-              fontSize: 14,
-            )),
+              textStyle: TextStyle(
+                color: Color(0xff727272),
+                fontSize: 14,
+              ),
+            ),
           ),
 
           SizedBox(
@@ -85,39 +89,46 @@ class SurveyState extends State<Survey> {
           ),
 
           Center(
-              child: Column(
-            children: [
-              Text(
-                questions_list[questionsLength % questions_list.length]
-                    ['question'],
-                style: GoogleFonts.poppins(
+            child: Column(
+              children: [
+                Text(
+                  questions_list[questionsLength % questions_list.length]
+                      ['question'],
+                  style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.normal,
-                )),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              QuestionOption(
-                option: questions_list[questionsLength % questions_list.length]
-                    ['option1'],
-              ),
-              QuestionOption(
-                option: questions_list[questionsLength % questions_list.length]
-                    ['option2'],
-              ),
-              QuestionOption(
-                option: questions_list[questionsLength % questions_list.length]
-                    ['option3'],
-              ),
-              QuestionOption(
-                option: questions_list[questionsLength % questions_list.length]
-                    ['option4'],
-              ),
-            ],
-          )),
+                      color: Color(0xffD0BED4),
+                      fontSize: 24,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                QuestionOption(
+                  option:
+                      questions_list[questionsLength % questions_list.length]
+                          ['option1'],
+                ),
+                QuestionOption(
+                  option:
+                      questions_list[questionsLength % questions_list.length]
+                          ['option2'],
+                ),
+                QuestionOption(
+                  option:
+                      questions_list[questionsLength % questions_list.length]
+                          ['option3'],
+                ),
+                QuestionOption(
+                  option:
+                      questions_list[questionsLength % questions_list.length]
+                          ['option4'],
+                ),
+              ],
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,46 +142,77 @@ class SurveyState extends State<Survey> {
                   }
                 },
                 child: Container(
-                    margin: EdgeInsets.only(top: 60),
-                    alignment: Alignment.bottomLeft,
-                    height: 70,
-                    width: 70,
-                    decoration: BoxDecoration(
-                        color: Color(0xffd6d6d6),
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(80)),
-                    child: Center(
-                        child: SvgPicture.asset(
-                      'assets/arrow_back.svg',
-                      height: 10,
-                      width: 10,
-                    ))),
+                  margin: EdgeInsets.only(top: 60),
+                  alignment: Alignment.bottomLeft,
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Color(0xffd6d6d6).withOpacity(0.5),
+                    // border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(80),
+                  ),
+                  child: questionsLength % questions_list.length + 1 != 1
+                      ? Center(
+                          child: SvgPicture.asset(
+                            'assets/arrow_back.svg',
+                            height: 10,
+                            width: 10,
+                          ),
+                        )
+                      : Center(
+                          child: SvgPicture.asset(
+                            'assets/cross.svg',
+                            height: 20,
+                            width: 20,
+                            color: Colors.black,
+                          ),
+                        ),
+                ),
               ),
               GestureDetector(
                 onTap: () {
                   if (questionsLength % questions_list.length + 1 ==
                       questions_list.length) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Artist()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Artist(),
+                        ));
                   }
 
                   _inctimentCounter();
                   // ScaffoldMessenger.of(context)
-                  //     .showSnackBar(SnackBar(content: Text('Next questions')));
+                  //     .showSnackBar(SnackBar(content: Text('Next questions'),));
                 },
                 child: Container(
-                    margin: EdgeInsets.only(top: 60),
-                    alignment: Alignment.bottomLeft,
-                    height: 85,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Color(0xffd6d6d6),
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(80)),
-                    child: Center(
-                        child: SvgPicture.asset(
-                      'assets/arrow_forward.svg',
-                    ))),
+                  margin: EdgeInsets.only(top: 60),
+                  alignment: Alignment.bottomLeft,
+                  height: 85,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: Color(0xffd6d6d6),
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(80),
+                  ),
+                  child: questionsLength % questions_list.length + 1 !=
+                          questions_list.length
+                      ? Center(
+                          child: SvgPicture.asset(
+                            'assets/arrow_forward.svg',
+                          ),
+                        )
+                      : Center(
+                          child: Text(
+                            'Submit',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                ),
               )
             ],
           )

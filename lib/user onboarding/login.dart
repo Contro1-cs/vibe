@@ -17,9 +17,13 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: SafeArea(child: getBody()),
-    ));
+      backgroundColor: Color(0xff2E2539),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: getBody(),
+        ),
+      ),
+    );
   }
 
   Widget getBody() {
@@ -37,10 +41,11 @@ class _LoginState extends State<Login> {
           child: Text(
             'Welcome back!',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 28,
-                    fontWeight: FontWeight.w600)),
+              textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
         ),
         Container(
@@ -50,7 +55,8 @@ class _LoginState extends State<Login> {
           child: Text(
             'Login to continue >',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 14, color: Colors.grey)),
+              textStyle: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
           ),
         ),
         Container(
@@ -67,15 +73,26 @@ class _LoginState extends State<Login> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 50, 15, 0),
           child: TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(width: 2, color: Colors.black)),
-                labelText: 'Email',
-                hintText: 'example@gmail.com',
-                border: OutlineInputBorder(),
-              )),
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+              labelText: 'Email',
+              hintText: 'example@gmail.com',
+              border: OutlineInputBorder(),
+              disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+            ),
+          ),
         ),
 
         //password
@@ -84,55 +101,72 @@ class _LoginState extends State<Login> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 30, 15, 0),
           child: TextField(
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(width: 2, color: Colors.black)),
-                labelText: 'Password',
-                hintText: 'Minimum 8 digits',
-                border: OutlineInputBorder(),
-              )),
+            obscureText: true,
+            keyboardType: TextInputType.visiblePassword,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(width: 2, color: Colors.black),
+              ),
+              labelText: 'Password',
+              hintText: 'Minimum 8 digits',
+              border: OutlineInputBorder(),
+            ),
+          ),
         ),
 
         //login button
         GestureDetector(
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage())),
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomePage(),
+              )),
           child: Container(
             margin: EdgeInsets.only(left: 15, right: 15, top: 60, bottom: 10),
             width: w,
             height: 50,
             decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(8)),
+              color: Color(0xff8288C3),
+              borderRadius: BorderRadius.circular(8),
+            ),
             child: Center(
-                child: Text(
-              'Login',
-              style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Colors.white, fontSize: 16)),
-            )),
+              child: Text(
+                'Login',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ),
+            ),
           ),
         ),
         GestureDetector(
           onTap: (() => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Signup()))),
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Signup(),
+                ),
+              )),
           child: Center(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'New here? ',
-                style: GoogleFonts.poppins(
-                    textStyle: TextStyle(color: Colors.grey)),
-              ),
-              Text(
-                'Signup!',
-                style: GoogleFonts.poppins(
-                    textStyle: TextStyle(color: Colors.black)),
-              ),
-            ],
-          )),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'New here? ',
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Text(
+                  'Signup!',
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ],
+            ),
+          ),
         )
       ],
     );

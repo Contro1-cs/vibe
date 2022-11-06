@@ -25,6 +25,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
       Swipe3(),
     ];
     return Scaffold(
+      backgroundColor: Color(0xff2E2539),
       body: onBoardingBody(),
     );
   }
@@ -62,7 +63,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                   margin: EdgeInsets.only(left: 5, right: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Colors.grey),
+                      color: Colors.white),
                 ),
                 Container(
                   height: 10,
@@ -83,9 +84,6 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
               ]),
         ),
         Center(
-          child: Row(children: [Container()]),
-        ),
-        Center(
           child: Container(
               height: 55,
               width: w,
@@ -96,7 +94,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
               ),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Color(0xff303030),
+                color: Color(0xff8288C3),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: GestureDetector(
@@ -109,13 +107,13 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                       'Get started     ',
                       style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                        color: Color(0xff7BC950),
+                        color: Colors.white,
                         fontSize: 16,
                       )),
                     ),
                     Icon(
                       Icons.arrow_forward,
-                      color: Color(0xff7BC950),
+                      color: Colors.white,
                     )
                   ],
                 )),
@@ -146,12 +144,18 @@ class Swipe1 extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
-            child: SvgPicture.asset('assets/default.svg'),
+            child: SvgPicture.asset(
+              'assets/default.svg',
+            ),
           ),
           Text(
             'Music For your Soul',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 24, color: Colors.black)),
+              textStyle: TextStyle(
+                  fontSize: 24,
+                  color: Color(0xffD0BED4),
+                  fontWeight: FontWeight.bold),
+            ),
           ),
           Container(
             width: w,
@@ -160,7 +164,7 @@ class Swipe1 extends StatelessWidget {
             child: Text(
               'A playlist that is more than just songs Something that feels personal',
               style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Color(0xff909090), fontSize: 16)),
+                  textStyle: TextStyle(color: Color(0xffD0BED4), fontSize: 16)),
               textAlign: TextAlign.center,
             ),
           )
@@ -178,35 +182,41 @@ class Swipe2 extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
 
     return SafeArea(
-        child: SizedBox(
-      width: w,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
-            child: SvgPicture.asset('assets/default.svg'),
-          ),
-          Text(
-            'Playlist just for you',
-            style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-          ),
-          Container(
-            width: w,
-            margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-            padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: Text(
-              'Music that comes to life!',
-              style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Color(0xff909090), fontSize: 16)),
-              textAlign: TextAlign.center,
+      child: SizedBox(
+        width: w,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
+              child: SvgPicture.asset('assets/default.svg'),
             ),
-          )
-        ],
+            Text(
+              'Playlist just for you',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    fontSize: 24,
+                    color: Color(0xffD0BED4),
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              width: w,
+              margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
+              padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: Text(
+                'Music that comes to life!\nSongs that are personal to you!',
+                style: GoogleFonts.poppins(
+                    textStyle:
+                        TextStyle(color: Color(0xffD0BED4), fontSize: 16)),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
 
@@ -218,34 +228,40 @@ class Swipe3 extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
 
     return SafeArea(
-        child: SizedBox(
-      width: w,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
-            child: SvgPicture.asset('assets/default.svg'),
-          ),
-          Text(
-            'Never run out of options!',
-            style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-          ),
-          Container(
-            width: w,
-            margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
-            padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: Text(
-              'Playlists for all kinds of moods, needs and parties!',
-              style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Color(0xff909090), fontSize: 16)),
-              textAlign: TextAlign.center,
+      child: SizedBox(
+        width: w,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
+              child: SvgPicture.asset('assets/default.svg'),
             ),
-          )
-        ],
+            Text(
+              'Never run out of options!',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    fontSize: 24,
+                    color: Color(0xffD0BED4),
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              width: w,
+              margin: EdgeInsets.fromLTRB(0, 30, 0, 30),
+              padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+              child: Text(
+                'Playlists for all kinds of moods, needs and parties!',
+                style: GoogleFonts.poppins(
+                    textStyle:
+                        TextStyle(color: Color(0xffD0BED4), fontSize: 16)),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

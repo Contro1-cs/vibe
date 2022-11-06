@@ -21,9 +21,10 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xff2E2539),
         body: SingleChildScrollView(
-      child: SafeArea(child: signupBody()),
-    ));
+          child: SafeArea(child: signupBody()),
+        ));
   }
 
   Widget signupBody() {
@@ -42,7 +43,7 @@ class _SignupState extends State<Signup> {
             'Hello there!',
             style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.w600)),
           ),
@@ -54,7 +55,11 @@ class _SignupState extends State<Signup> {
           child: Text(
             'Create new account >',
             style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 14, color: Colors.grey)),
+              textStyle: TextStyle(
+                fontSize: 14,
+                color: Color(0xffD0BED4),
+              ),
+            ),
           ),
         ),
         Container(
@@ -180,7 +185,7 @@ class _SignupState extends State<Signup> {
                       width: 208,
                       margin: EdgeInsets.only(top: 70, bottom: 70),
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          color: Color(0xff2E2539),
                           borderRadius: BorderRadius.circular(5)),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +210,8 @@ class _SignupState extends State<Signup> {
             width: w,
             height: 50,
             decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(8)),
+                color: Color(0xff8288C3),
+                borderRadius: BorderRadius.circular(8)),
             child: Center(
                 child: Text(
               'Signup',
@@ -229,7 +235,8 @@ class _SignupState extends State<Signup> {
               Text(
                 'Login!',
                 style: GoogleFonts.poppins(
-                    textStyle: TextStyle(color: Colors.black)),
+                    textStyle: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600)),
               ),
             ],
           )),
