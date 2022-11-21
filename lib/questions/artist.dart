@@ -32,7 +32,7 @@ class _ArtistState extends State<Artist> {
           ),
           Center(
             child: Text(
-              'Just one last step!',
+              'Just one last Question!',
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                 fontSize: 28,

@@ -106,7 +106,10 @@ class _LoginState extends State<Login> {
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(width: 2, color: Colors.black),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
               ),
               labelText: 'Password',
               hintText: 'Minimum 8 digits',

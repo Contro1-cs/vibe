@@ -37,6 +37,7 @@ class SurveyState extends State<Survey> {
     });
   }
 
+  bool option1 = false, option2 = false, option3 = false, option4 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,25 +107,59 @@ class SurveyState extends State<Survey> {
                 const SizedBox(
                   height: 50,
                 ),
-                QuestionOption(
-                  option:
-                      questions_list[questionsLength % questions_list.length]
-                          ['option1'],
+
+                //option#1
+                GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      margin: EdgeInsets.only(left: 5, right: 5),
+                      child: QuestionOption(
+                        option: questions_list[
+                            questionsLength % questions_list.length]['option1'],
+                        selected: option1,
+                      ),
+                    )),
+
+                //option#2
+                GestureDetector(
+                  onTap: () {
+                    if (questionsLength % questions_list.length + 1 == 1) {
+                      // _inctimentCounter();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Next questions'),
+                        ),
+                      );
+                    }
+                  },
+                  child: QuestionOption(
+                    option:
+                        questions_list[questionsLength % questions_list.length]
+                            ['option2'],
+                    selected: option2,
+                  ),
                 ),
-                QuestionOption(
-                  option:
-                      questions_list[questionsLength % questions_list.length]
-                          ['option2'],
+
+                //option#3
+                GestureDetector(
+                  onTap: () {},
+                  child: QuestionOption(
+                    option:
+                        questions_list[questionsLength % questions_list.length]
+                            ['option3'],
+                    selected: option3,
+                  ),
                 ),
-                QuestionOption(
-                  option:
-                      questions_list[questionsLength % questions_list.length]
-                          ['option3'],
-                ),
-                QuestionOption(
-                  option:
-                      questions_list[questionsLength % questions_list.length]
-                          ['option4'],
+
+                //option#4
+                GestureDetector(
+                  onTap: () {},
+                  child: QuestionOption(
+                    option:
+                        questions_list[questionsLength % questions_list.length]
+                            ['option4'],
+                    selected: option4,
+                  ),
                 ),
               ],
             ),
@@ -174,15 +209,15 @@ class SurveyState extends State<Survey> {
                   if (questionsLength % questions_list.length + 1 ==
                       questions_list.length) {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Artist(),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Artist(),
+                      ),
+                    );
                   }
-
                   _inctimentCounter();
                   // ScaffoldMessenger.of(context)
-                  //     .showSnackBar(SnackBar(content: Text('Next questions'),));
+                  //     .showSnackBar(SnackBar(content: Text('Next questions'),),);
                 },
                 child: Container(
                   margin: EdgeInsets.only(top: 60),
@@ -197,8 +232,14 @@ class SurveyState extends State<Survey> {
                   child: questionsLength % questions_list.length + 1 !=
                           questions_list.length
                       ? Center(
-                          child: SvgPicture.asset(
-                            'assets/arrow_forward.svg',
+                          child: Text(
+                            'Skip',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                         )
                       : Center(
