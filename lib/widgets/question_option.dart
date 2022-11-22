@@ -22,26 +22,22 @@ class QuestionOptionState extends State<QuestionOption> {
     var w = MediaQuery.of(context).size.width;
     Color clr = Color.fromARGB(0, 32, 32, 78);
 
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        margin: EdgeInsets.only(top: 8, bottom: 8),
-        height: 60,
-        width: w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: Color(0xff8288C3),
-          border: Border.all(color: Colors.black),
-        ),
-        child: Center(
-          child: Text(
-            widget.option,
-            style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
-              ),
+    return Container(
+      height: 60,
+      width: w,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: Color(0xff8288C3),
+        border: Border.all(color: Colors.black),
+      ),
+      child: Center(
+        child: Text(
+          widget.option,
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
             ),
           ),
         ),

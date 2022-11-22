@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,6 +75,9 @@ class _LoginState extends State<Login> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 50, 15, 0),
           child: TextField(
+            style: TextStyle(
+              color: Color(0xffD0BED4),
+            ),
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
@@ -82,8 +87,20 @@ class _LoginState extends State<Login> {
                   color: Color(0xffD0BED4),
                 ),
               ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
               labelText: 'Email',
               hintText: 'example@gmail.com',
+              hintStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              labelStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
               border: OutlineInputBorder(),
               disabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -101,6 +118,9 @@ class _LoginState extends State<Login> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 30, 15, 0),
           child: TextField(
+            style: TextStyle(
+              color: Color(0xffD0BED4),
+            ),
             obscureText: true,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
@@ -113,7 +133,19 @@ class _LoginState extends State<Login> {
               ),
               labelText: 'Password',
               hintText: 'Minimum 8 digits',
+              hintStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              labelStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
               border: OutlineInputBorder(),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
             ),
           ),
         ),

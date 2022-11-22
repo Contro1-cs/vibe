@@ -76,14 +76,39 @@ class _SignupState extends State<Signup> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 50, 15, 0),
           child: TextField(
+              style: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
               controller: _emailcontroller,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(width: 2, color: Colors.black)),
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Color(0xffD0BED4),
+                  ),
+                ),
                 labelText: 'Email',
                 hintText: 'example@gmail.com',
+                hintStyle: TextStyle(
+                  color: Color(0xffD0BED4),
+                ),
+                labelStyle: TextStyle(
+                  color: Color(0xffD0BED4),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Color(0xffD0BED4),
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Color(0xffD0BED4),
+                  ),
+                ),
                 border: OutlineInputBorder(),
               )),
         ),
@@ -94,17 +119,40 @@ class _SignupState extends State<Signup> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 20, 15, 0),
           child: TextField(
-              controller: _passwordController,
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(width: 2, color: Colors.black)),
-                labelText: 'Password',
-                hintText: 'Minimum 8 digits',
-                border: OutlineInputBorder(),
-              )),
+            controller: _passwordController,
+            obscureText: true,
+            keyboardType: TextInputType.visiblePassword,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+              labelText: 'Password',
+              hintText: 'Minimum 8 digits',
+              labelStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              border: OutlineInputBorder(),
+            ),
+          ),
         ),
 
         //Name
@@ -118,10 +166,26 @@ class _SignupState extends State<Signup> {
               keyboardType: TextInputType.visiblePassword,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(width: 2, color: Colors.black)),
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Color(0xffD0BED4),
+                  ),
+                ),
                 labelText: 'First name',
                 hintText: 'ex. Alex',
+                hintStyle: TextStyle(
+                  color: Color(0xffD0BED4),
+                ),
+                labelStyle: TextStyle(
+                  color: Color(0xffD0BED4),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Color(0xffD0BED4),
+                  ),
+                ),
                 border: OutlineInputBorder(),
               )),
         ),

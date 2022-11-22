@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vibe/questions/artist.dart';
 import 'package:vibe/questions/question_list.dart';
+import 'package:vibe/questions/selected_list.dart';
 import 'package:vibe/widgets/question_option.dart';
 
 class Survey extends StatefulWidget {
@@ -76,7 +77,7 @@ class SurveyState extends State<Survey> {
             ),
           ),
           Text(
-            '${questions_list.length - questionsLength % questions_list.length} questions left',
+            '${questions_list.length - questionsLength % questions_list.length - 1} questions left',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 color: Color(0xff727272),
@@ -110,55 +111,93 @@ class SurveyState extends State<Survey> {
 
                 //option#1
                 GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5, right: 5),
-                      child: QuestionOption(
-                        option: questions_list[
-                            questionsLength % questions_list.length]['option1'],
-                        selected: option1,
-                      ),
-                    )),
+                  onTap: () {
+                    option1 = !option1;
+                    setState(() {});
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    margin: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: option1
+                          ? Border.all(color: Colors.white, width: 2)
+                          : Border.all(color: Colors.transparent, width: 0),
+                    ),
+                    child: QuestionOption(
+                      option: questions_list[
+                          questionsLength % questions_list.length]['option1'],
+                      selected: option1,
+                    ),
+                  ),
+                ),
 
                 //option#2
                 GestureDetector(
                   onTap: () {
-                    if (questionsLength % questions_list.length + 1 == 1) {
-                      // _inctimentCounter();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Next questions'),
-                        ),
-                      );
-                    }
+                    option2 = !option2;
+                    setState(() {});
                   },
-                  child: QuestionOption(
-                    option:
-                        questions_list[questionsLength % questions_list.length]
-                            ['option2'],
-                    selected: option2,
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    margin: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: option2
+                          ? Border.all(color: Colors.white, width: 2)
+                          : Border.all(color: Colors.transparent, width: 0),
+                    ),
+                    child: QuestionOption(
+                      option: questions_list[
+                          questionsLength % questions_list.length]['option2'],
+                      selected: option1,
+                    ),
                   ),
                 ),
 
                 //option#3
                 GestureDetector(
-                  onTap: () {},
-                  child: QuestionOption(
-                    option:
-                        questions_list[questionsLength % questions_list.length]
-                            ['option3'],
-                    selected: option3,
+                  onTap: () {
+                    option3 = !option3;
+                    setState(() {});
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    margin: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: option3
+                          ? Border.all(color: Colors.white, width: 2)
+                          : Border.all(color: Colors.transparent, width: 0),
+                    ),
+                    child: QuestionOption(
+                      option: questions_list[
+                          questionsLength % questions_list.length]['option3'],
+                      selected: option1,
+                    ),
                   ),
                 ),
 
                 //option#4
                 GestureDetector(
-                  onTap: () {},
-                  child: QuestionOption(
-                    option:
-                        questions_list[questionsLength % questions_list.length]
-                            ['option4'],
-                    selected: option4,
+                  onTap: () {
+                    option4 = !option4;
+                    setState(() {});
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    margin: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: option4
+                          ? Border.all(color: Colors.white, width: 2)
+                          : Border.all(color: Colors.transparent, width: 0),
+                    ),
+                    child: QuestionOption(
+                      option: questions_list[
+                          questionsLength % questions_list.length]['option4'],
+                      selected: option4,
+                    ),
                   ),
                 ),
               ],
@@ -214,8 +253,39 @@ class SurveyState extends State<Survey> {
                         builder: (context) => Artist(),
                       ),
                     );
+                  } else if (option1 == false &&
+                      option2 == false &&
+                      option3 == false &&
+                      option4 == false) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Please select one option',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        backgroundColor: Color(0xffD0BED4),
+                      ),
+                    );
+                  } else {
+                    if (option1 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option1']);
+                    } else if (option2 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option2']);
+                    } else if (option3 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option3']);
+                    } else if (option4 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option4']);
+                    }
+                    _inctimentCounter();
+                    option1 = false;
+                    option2 = false;
+                    option3 = false;
+                    option4 = false;
                   }
-                  _inctimentCounter();
                   // ScaffoldMessenger.of(context)
                   //     .showSnackBar(SnackBar(content: Text('Next questions'),),);
                 },
@@ -232,14 +302,10 @@ class SurveyState extends State<Survey> {
                   child: questionsLength % questions_list.length + 1 !=
                           questions_list.length
                       ? Center(
-                          child: Text(
-                            'Skip',
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
+                          child: SvgPicture.asset(
+                            'assets/arrow_forward.svg',
+                            height: 10,
+                            width: 10,
                           ),
                         )
                       : Center(
