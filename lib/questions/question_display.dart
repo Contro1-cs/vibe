@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vibe/questions/artist.dart';
+import 'package:vibe/questions/survey_results.dart';
 import 'package:vibe/questions/question_list.dart';
 import 'package:vibe/questions/selected_list.dart';
 import 'package:vibe/widgets/question_option.dart';
@@ -56,6 +56,7 @@ class SurveyState extends State<Survey> {
 
     var questionsLeft = questionsLength;
     var h = MediaQuery.of(context).size.width;
+    // selectedItems.removeRange(0, selectedItems.length);
     return Padding(
       padding: EdgeInsets.only(left: 25, right: 25),
       child: Column(
@@ -247,6 +248,19 @@ class SurveyState extends State<Survey> {
                 onTap: () {
                   if (questionsLength % questions_list.length + 1 ==
                       questions_list.length) {
+                    if (option1 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option1']);
+                    } else if (option2 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option2']);
+                    } else if (option3 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option3']);
+                    } else if (option4 == true) {
+                      selectedItems.add(questions_list[
+                          questionsLength % questions_list.length]['option4']);
+                    }
                     Navigator.push(
                       context,
                       MaterialPageRoute(

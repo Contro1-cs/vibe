@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ArtistCatagory extends StatefulWidget {
+class SurveyResult extends StatefulWidget {
   final String catagory;
-  const ArtistCatagory({super.key, required this.catagory});
+  const SurveyResult({super.key, required this.catagory});
 
   @override
-  State<ArtistCatagory> createState() => ArtistCatagoryState();
+  State<SurveyResult> createState() => SurveyResultState();
 }
 
-class ArtistCatagoryState extends State<ArtistCatagory> {
+class SurveyResultState extends State<SurveyResult> {
   @override
   Widget build(BuildContext context) {
     return Container(

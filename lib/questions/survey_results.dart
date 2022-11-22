@@ -26,7 +26,9 @@ class _ArtistState extends State<Artist> {
               itemCount: selectedItems.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(selectedItems[index]),
+                  title: Text(
+                    selectedItems[index],
+                  ),
                 );
               },
             ),
