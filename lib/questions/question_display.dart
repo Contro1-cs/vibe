@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vibe/questions/survey_results.dart';
-import 'package:vibe/questions/question_list.dart';
-import 'package:vibe/questions/selected_list.dart';
+import 'package:vibe/lists/question_list.dart';
+import 'package:vibe/lists/selected_list.dart';
 import 'package:vibe/widgets/question_option.dart';
+import 'package:vibe/widgets/survey_catagory.dart';
 
 class Survey extends StatefulWidget {
   const Survey({super.key});
@@ -251,16 +252,20 @@ class SurveyState extends State<Survey> {
                     if (option1 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option1']);
-                    } else if (option2 == true) {
+                    }
+                    if (option2 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option2']);
-                    } else if (option3 == true) {
+                    }
+                    if (option3 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option3']);
-                    } else if (option4 == true) {
+                    }
+                    if (option4 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option4']);
                     }
+                    Navigator.pop(context);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -284,13 +289,16 @@ class SurveyState extends State<Survey> {
                     if (option1 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option1']);
-                    } else if (option2 == true) {
+                    }
+                    if (option2 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option2']);
-                    } else if (option3 == true) {
+                    }
+                    if (option3 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option3']);
-                    } else if (option4 == true) {
+                    }
+                    if (option4 == true) {
                       selectedItems.add(questions_list[
                           questionsLength % questions_list.length]['option4']);
                     }
