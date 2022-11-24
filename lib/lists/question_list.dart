@@ -27,4 +27,25 @@ List questions_list = [
     'option3': '2010s',
     'option4': 'It is at its peak right now!',
   },
+  {
+    'question': 'What is this playlist for?',
+    'option1': 'Party',
+    'option2': 'Family get-togehter',
+    'option3': 'Solo chill',
+    'option4': 'Traveling',
+  },
+  {
+    'question': 'What is the party about?',
+    'option1': 'House party',
+    'option2': 'Kitty party',
+    'option3': 'Birthday party',
+    'option4': 'General party',
+  },
+  {
+    'question': 'if you are alone what do you listen to most?',
+    'option1': 'Romance',
+    'option2': 'Sad',
+    'option3': 'Dance',
+    'option4': 'Chill',
+  },
 ];

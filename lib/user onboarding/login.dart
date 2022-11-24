@@ -66,7 +66,7 @@ class _LoginState extends State<Login> {
           padding: EdgeInsets.fromLTRB(15, 20, 15, 0),
           width: w,
           height: h / 3,
-          child: SvgPicture.asset('assets/default.svg'),
+          child: Image.asset('assets/default_2.png'),
         ),
 
         //email

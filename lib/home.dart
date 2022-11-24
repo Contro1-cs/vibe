@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vibe/lists/playlist.dart';
-import 'package:vibe/main.dart';
+import 'package:vibe/main_playlist.dart';
 import 'package:vibe/widgets/genre_specific.dart';
 
 class HomePage extends StatefulWidget {
@@ -66,43 +66,55 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //Main playlist
-            Container(
-              height: 375,
-              width: w,
-              decoration: BoxDecoration(
-                color: Color(0xffF0E0FA),
-                border: Border(
-                  top: BorderSide(color: Colors.black, width: 2),
-                  bottom: BorderSide(color: Colors.black, width: 2),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainPlaylist(),
+                  ),
+                );
+              },
+              child: Container(
+                height: w,
+                width: w,
+                decoration: BoxDecoration(
+                  // color: Color(0xffF0E0FA),
+                  image: DecorationImage(
+                      image: AssetImage('assets/album_cover.png')),
+                  border: Border(
+                    top: BorderSide(color: Colors.black, width: 2),
+                    bottom: BorderSide(color: Colors.black, width: 2),
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Nitin\'s Vibe',
-                      style: GoogleFonts.libreFranklin(
-                        textStyle: TextStyle(
-                          color: Color(0xff2E2539),
-                          fontWeight: FontWeight.w900,
-                          fontSize: 46,
+                child: Padding(
+                  padding: EdgeInsets.all(15),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Nitin\'s Vibe',
+                        style: GoogleFonts.libreFranklin(
+                          textStyle: TextStyle(
+                            color: Color(0xff2E2539),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 46,
+                          ),
                         ),
                       ),
-                    ),
-                    Text(
-                      'Automatic generated playlist',
-                      style: GoogleFonts.libreFranklin(
-                        textStyle: TextStyle(
-                          color: Color(0xff2E2539),
-                          fontWeight: FontWeight.w900,
-                          fontSize: 18,
+                      Text(
+                        'Automatic generated playlist',
+                        style: GoogleFonts.libreFranklin(
+                          textStyle: TextStyle(
+                            color: Color(0xff2E2539),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -148,7 +160,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  //privacy policy
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.security,
@@ -157,14 +172,17 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Privacy Policy',
                         style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Color(0xffF0E0FA),
-                          ),
+                          textStyle:
+                              TextStyle(color: Color(0xffF0E0FA), fontSize: 14),
                         ),
                       ),
                     ],
                   ),
+
+                  //About us
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.info,
@@ -175,12 +193,17 @@ class _HomePageState extends State<HomePage> {
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             color: Color(0xffF0E0FA),
+                            fontSize: 14,
                           ),
                         ),
                       ),
                     ],
                   ),
+
+                  //About team
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.people,
@@ -191,6 +214,7 @@ class _HomePageState extends State<HomePage> {
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             color: Color(0xffF0E0FA),
+                            fontSize: 14,
                           ),
                         ),
                       ),

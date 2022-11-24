@@ -189,9 +189,8 @@ class Swipe2 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
-              child: SvgPicture.asset('assets/default.svg'),
-            ),
+                margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
+                child: Image.asset('assets/default_2.png')),
             Text(
               'Playlist just for you',
               style: GoogleFonts.poppins(
@@ -235,9 +234,8 @@ class Swipe3 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
-              child: SvgPicture.asset('assets/default.svg'),
-            ),
+                margin: EdgeInsets.fromLTRB(0, 39, 0, 21),
+                child: Image.asset('assets/default_3.png')),
             Text(
               'Never run out of options!',
               style: GoogleFonts.poppins(
