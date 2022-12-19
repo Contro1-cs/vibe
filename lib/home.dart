@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vibe/lists/playlist.dart';
 import 'package:vibe/main_playlist.dart';
+import 'package:vibe/party_playlist.dart';
 import 'package:vibe/widgets/genre_specific.dart';
 
 class HomePage extends StatefulWidget {
@@ -134,9 +135,17 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //Generic playlist #1
-            GenreSpecific(
-              title: playlist[0]['title'],
-              subtitle: playlist[0]['subtitle'],
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PartyPlaylist(),
+                ),
+              ),
+              child: GenreSpecific(
+                title: playlist[0]['title'],
+                subtitle: playlist[0]['subtitle'],
+              ),
             ),
 
             //Generic playlist #2

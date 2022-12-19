@@ -76,41 +76,42 @@ class _SignupState extends State<Signup> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 50, 15, 0),
           child: TextField(
-              style: TextStyle(
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            controller: _emailcontroller,
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Color(0xffD0BED4),
+                ),
+              ),
+              labelText: 'Email',
+              hintText: 'example@gmail.com',
+              hintStyle: TextStyle(
                 color: Color(0xffD0BED4),
               ),
-              controller: _emailcontroller,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Color(0xffD0BED4),
-                  ),
-                ),
-                labelText: 'Email',
-                hintText: 'example@gmail.com',
-                hintStyle: TextStyle(
+              labelStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
                   color: Color(0xffD0BED4),
                 ),
-                labelStyle: TextStyle(
+              ),
+              disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
                   color: Color(0xffD0BED4),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Color(0xffD0BED4),
-                  ),
-                ),
-                disabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Color(0xffD0BED4),
-                  ),
-                ),
-                border: OutlineInputBorder(),
-              )),
+              ),
+              border: OutlineInputBorder(),
+            ),
+          ),
         ),
 
         //password
@@ -119,6 +120,9 @@ class _SignupState extends State<Signup> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 20, 15, 0),
           child: TextField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
             controller: _passwordController,
             obscureText: true,
             keyboardType: TextInputType.visiblePassword,
@@ -161,33 +165,36 @@ class _SignupState extends State<Signup> {
           height: 60,
           margin: EdgeInsets.fromLTRB(15, 20, 15, 0),
           child: TextField(
-              controller: _nameController,
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Color(0xffD0BED4),
-                  ),
-                ),
-                labelText: 'First name',
-                hintText: 'ex. Alex',
-                hintStyle: TextStyle(
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            controller: _nameController,
+            keyboardType: TextInputType.name,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(
+                  width: 2,
                   color: Color(0xffD0BED4),
                 ),
-                labelStyle: TextStyle(
+              ),
+              labelText: 'First name',
+              hintText: 'ex. Alex',
+              hintStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              labelStyle: TextStyle(
+                color: Color(0xffD0BED4),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  width: 2,
                   color: Color(0xffD0BED4),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 2,
-                    color: Color(0xffD0BED4),
-                  ),
-                ),
-                border: OutlineInputBorder(),
-              )),
+              ),
+              border: OutlineInputBorder(),
+            ),
+          ),
         ),
 
         //signup button
